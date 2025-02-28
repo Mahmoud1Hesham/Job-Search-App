@@ -261,6 +261,42 @@
 					"response": []
 				},
 				{
+					"name": "create excel sheet",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/excel-export?companyId=67be3aaef1cf78d771e10261&date=2025-02-28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"excel-export"
+							],
+							"query": [
+								{
+									"key": "companyId",
+									"value": "67be3aaef1cf78d771e10261"
+								},
+								{
+									"key": "date",
+									"value": "2025-02-28"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "share profile",
 					"request": {
 						"method": "GET",
