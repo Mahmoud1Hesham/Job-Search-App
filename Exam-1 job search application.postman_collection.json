@@ -1,0 +1,1278 @@
+{
+	"info": {
+		"_postman_id": "4ea81601-e3a5-4508-ba59-f5d079798c06",
+		"name": "Exam-1 job search application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36518370"
+	},
+	"item": [
+		{
+			"name": "authentication APIS",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"userName\":\"Mahmoud\",\r\n    \"firstName\":\"Mahmoud\",\r\n    \"lastName\":\"Hesham\",\r\n    \"email\":\"heshamkhair2332233012www@gmail.com\",\r\n    \"password\":\"Mahmoud2050\",\r\n    \"confirmationPassword\":\"Mahmoud2050\",\r\n    \"phone\":\"01012345678\",\r\n    \"DOB\":\"5-21-2010\",\r\n    \"gender\":\"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirm email",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRpZmV2aTk1MjRAZnVuZGFway5jb20iLCJpYXQiOjE3MzcwNTc1NDV9.aDyGbZIoOQL60pELeZ1SbCwPwMS32TaP_WHC8jT9U2E",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\": \"egyptlives12345@gmail.com\",\r\n    \"email\": \"heshamkhair2012@gmail.com\",\r\n    \"code\": \"6611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/confirm-email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"confirm-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\":\"egyptlives12345@gmail.com\",\r\n    \"email\":\"heshamkhair2332233012www@gmail.com\",\r\n    // \"email\":\"heshamkhair2012@gmail.com\",\r\n    \"password\":\"Mahmoud2050\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmE1Mjc2NmQzODI5YjJhMzU5MjFmZSIsImlhdCI6MTc0MDI2NjY1NiwiZXhwIjoxNzQwODcxNDU2fQ.ooyZG7BKEJk9nLJl_q7pWaQO3in7vZM8xoyjDhp7xFM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auth/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"egyptlives12345@gmail.com\"\r\n    // \"email\":\"heshamkhair2012@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/forget-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"2279\",\r\n    \"email\": \"egyptlives12345@gmail.com\",\r\n    \"password\": \"Mahmoud2020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user APIS",
+			"item": [
+				{
+					"name": "update user profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"userName\":\"Mahmoud Hesham\",\r\n    \"firstName\":\"Mahmoud\",\r\n    \"lastName\":\"khair\",\r\n    \"phone\": \"01000571000\",\r\n    \"gender\": \"male\",\r\n    \"DOB\":\"2-10-2021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "share profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/profile/67ba52766d3829b2a35921fe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"67ba52766d3829b2a35921fe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"Mahmoud2050\",\r\n    \"password\":\"Mahmoud2020\",\r\n    \"confirmationPassword\":\"Mahmoud2020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "freeze account",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/profile/freeze",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"freeze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restore  account",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/profile/restore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"restore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile image",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/hero img.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete profile image",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/blog/32.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/image/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"image",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cover images",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/about.jpg",
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/feedback.jpg",
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/hero img.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/image/cover",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"image",
+								"cover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete cover images",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/about.jpg",
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/feedback.jpg",
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/hero img.jpg"
+									],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/image/cover/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"image",
+								"cover",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add  friend",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"friendId\":\"67ba52766d3829b2a35921fe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/addFriend",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"addFriend"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "company APIS",
+			"item": [
+				{
+					"name": "add company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"hg group\",\r\n    \"companyEmail\":\"hg.co@gmail.com\",\r\n    \"industry\":\"boxes\",\r\n    \"description\":\"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update company",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"ajax tech\",\r\n    \"companyEmail\":\"ajax.co@gmail.com\",\r\n    \"industry\":\"led stripes\",\r\n    \"description\":\"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/update-company/67be3b76f1cf78d771e1027c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"update-company",
+								"67be3b76f1cf78d771e1027c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "freeze company",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/freeze-company/67be3b76f1cf78d771e1027c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"freeze-company",
+								"67be3b76f1cf78d771e1027c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete company logo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/delete-logo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"delete-logo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete company cover images",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/delete-cover",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"delete-cover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restore company",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/restore-company/67be3b76f1cf78d771e1027c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"restore-company",
+								"67be3b76f1cf78d771e1027c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search company by name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/search-by-name/ajax tech",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"search-by-name",
+								"ajax tech"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get company by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/67be3aaef1cf78d771e10261",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"67be3aaef1cf78d771e10261"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload company profile pic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/hero img.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/upload-logo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"upload-logo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload company cover pics",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/about.jpg",
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/feedback.jpg",
+										"/D:/Programming learn/Route Front-End course/Assignments/Assignment 4/assets/hero img.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/upload-cover",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"upload-cover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign hr",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"HRs\":[\"67c0d14e3c7cf8588c01ae74\",\"67c0d1870c0f3c7041a2aafa\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/assign-hr/67be3aaef1cf78d771e10261",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"assign-hr",
+								"67be3aaef1cf78d771e10261"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job APIS",
+			"item": [
+				{
+					"name": "get all jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"jobTitle\": \"back-end developer\",\r\n    \"jobLocation\":\"onsite\" ,\r\n    \"workingTime\": \"full-time\",\r\n    \"seniorityLevel\": \"fresh\",\r\n    \"jobDescription\":\"bal vla fsa\",\r\n    \"technicalSkills\": [\"html\",\"css\",\"js\"],\r\n    \"softSkills\": [\"communication\",\"leadership\"],\r\n    \"companyId\":\"67be3aaef1cf78d771e10261\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job?search=q",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "q"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"jobTitle\": \"back-end developer\",\r\n    \"jobLocation\":\"onsite\" ,\r\n    \"workingTime\": \"full-time\",\r\n    \"seniorityLevel\": \"fresh\",\r\n    \"jobDescription\":\"bal vla fsa\",\r\n    \"technicalSkills\": [\"html\",\"css\",\"js\"],\r\n    \"softSkills\": [\"communication\",\"leadership\"],\r\n    \"companyId\":\"67be3aaef1cf78d771e10261\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job/filter?seniorityLevel=junior",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "seniorityLevel",
+									"value": "junior"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"jobTitle\": \"ui and ux designer\",\r\n    \"jobLocation\":\"onsite\" ,\r\n    \"workingTime\": \"part-time\",\r\n    \"seniorityLevel\": \"fresh\",\r\n    \"jobDescription\":\"bal vla fsa\",\r\n    \"technicalSkills\": [\"html\",\"css\",\"js\"],\r\n    \"softSkills\": [\"communication\",\"leadership\"],\r\n    \"companyId\":\"67be3aaef1cf78d771e10261\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update job",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"jobTitle\": \"dev ops\",\r\n    \"jobLocation\":\"onsite\" ,\r\n    \"workingTime\": \"full-time\",\r\n    \"seniorityLevel\": \"fresh\",\r\n    \"jobDescription\":\"bal vla fsa\",\r\n    \"technicalSkills\": [\"html\",\"css\",\"js\"],\r\n    \"softSkills\": [\"communication\",\"leadership\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job/update/67c0ea90881ec1db672dd0c0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"update",
+								"67c0ea90881ec1db672dd0c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete job",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/job/delete/67c0ea90881ec1db672dd0c0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job",
+								"delete",
+								"67c0ea90881ec1db672dd0c0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "application apis",
+			"item": [
+				{
+					"name": "apply to job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "67ba52766d3829b2a35921fe",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "viewed",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Mahmoud/Desktop/Professional Front-End Web Development.pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/application/create/67c0e692876e53d0fae65835",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"application",
+								"create",
+								"67c0e692876e53d0fae65835"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept or reject applicant",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/application/accept-reject/67c1e2bc52d7c426458154e1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"application",
+								"accept-reject",
+								"67c1e2bc52d7c426458154e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all applications for job",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{User Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/application/get-applications-for-job/67c0e692876e53d0fae65835",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"application",
+								"get-applications-for-job",
+								"67c0e692876e53d0fae65835"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat APIS",
+			"item": [
+				{
+					"name": "get one chat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/chat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
